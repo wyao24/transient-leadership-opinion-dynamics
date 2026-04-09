@@ -1,8 +1,21 @@
 .DS_Store
 Thumbs.db
 desktop.ini
-.ipynb_checkpoints/
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
 .venv/
 venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local outputs (keep curated figures tracked separately)
+results/experiments/**/tmp/

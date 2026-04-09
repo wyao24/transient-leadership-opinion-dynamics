@@ -1,49 +1,71 @@
-# Inventory
+# Repository Inventory and Audit
 
-## Important Files Found
+## 1) Code and Numerical Components
 
-- `src/albi2025_reproduction.py`
+### Core simulation code
 - `src/albi2025_reproduction_v2.py`
-- `notebooks/Albi-Edits.ipynb`
-- `notebooks/radical_vs_populist.ipynb`
-- `notebooks/transient_leadership_v2.ipynb`
+  - Comprehensive reproduction script implementing parameter sets, runtime presets, scenario control definitions, and three test suites.
+  - Contains Nanbu-like particle interaction loop, density estimators, and figure-construction functions.
+
+### Archived/superseded code
+- `archive/src/albi2025_reproduction.py`
+  - Earlier closely related version retained conservatively.
+  - Archived to keep one primary active implementation in `src/` while preserving provenance.
+
+### Numerical methods explicitly present in code
+- Particle-based stochastic binary interaction simulation.
+- Histogram-based joint/marginal density estimation with optional Gaussian smoothing.
+- Scenario-wise controlled dynamics for contact and opinion channels.
+
+## 2) Reports, Slides, and References
+
+### Project outputs
 - `reports/Kinetic Model - Ongoing.pdf`
 - `reports/Opinion Dynamics - Transient Leader-Follower in Control (Math 266E).pdf`
-- `docs/Opinion Dynamics - Transient Leader-Follower in Control (Math 266E).pptx`
-- `figures/rad_pop_main.png`
-- `figures/rad_pop_w.png`
-- `figures/test1_means.png`
-- `figures/test1_snapshots.png`
-- `figures/test2_snapshots.png`
-- `figures/test3_config1.png`
-- `figures/test3_config2.png`
-- `figures/test3_config3.png`
+- `reports/Opinion Dynamics - Transient Leader-Follower in Control (Math 266E).pptx`
 
-## Files Moved
+### Archived references/templates
+- `archive/Control of kinetic opinion dynamics in popularity-adaptive social networks.pdf`
+- `archive/Mean-Field Selective Optimal Control via Transient Leadership.pdf`
+- `archive/Template_Paper.pdf`
+- `archive/Template_for_SIAM_Journals.pdf`
 
-- Top-level Python scripts moved to `src/`
-- Top-level notebooks moved to `notebooks/`
-- Project/report PDFs moved to `reports/`
-- Slide deck moved to `docs/`
-- PNG outputs moved to `figures/`
-- Likely reference papers and templates moved to `archive/`
+## 3) Figures and Outputs
 
-## Files Left Ambiguous
+Organized under `results/figures/`:
+- `single-leader/`: single-leader snapshots.
+- `two-leader/`: two-leader competition snapshots.
+- `control-comparisons/`: mean trajectories/control comparison plots.
+- `transient-leadership/`: extended scenario configurations.
+- `radical-vs-populist/`: exploratory radical/populist figures.
 
-- `archive/Template_Paper.pdf`: could be a draft built from a template or a template-derived export; kept conservatively
-- `src/albi2025_reproduction.py` and `src/albi2025_reproduction_v2.py`: both retained pending a decision on the canonical version
-- `notebooks/Albi-Edits.ipynb`: appears to compare revised and original code, but its long-term role should be clarified
+`results/experiments/` is prepared for structured experiment outputs (metadata, arrays, logs).
 
-## Possible Duplicates Or Redundant Artifacts
+## 4) Notebooks
+- `notebooks/Albi-Edits.ipynb`
+- `notebooks/transient_leadership_v2.ipynb`
+- `notebooks/radical_vs_populist.ipynb`
 
-- `src/albi2025_reproduction.py` and `src/albi2025_reproduction_v2.py` appear closely related
-- `reports/Opinion Dynamics - Transient Leader-Follower in Control (Math 266E).pdf` and `docs/Opinion Dynamics - Transient Leader-Follower in Control (Math 266E).pptx` cover the same project topic in different formats
-- `archive/Control of kinetic opinion dynamics in popularity-adaptive social networks.pdf` and `archive/Mean-Field Selective Optimal Control via Transient Leadership.pdf` are likely external reference papers rather than primary project outputs
+These appear to be exploratory/reproduction notebooks complementing the scripted implementation.
 
-## Recommended Next Cleanup Steps
+## 5) Inferred Project Structure (from files)
 
-- Decide which script and notebook versions are canonical and archive superseded variants
-- Add dependency and execution instructions for the Python and notebook workflows
-- Review whether archived PDFs should remain in the public repository
-- Add lightweight provenance notes for generated figures
-- Consider a later pass to separate reproducible source outputs from one-off exploratory artifacts
+### Core model direction
+A kinetic opinion dynamics framework with coupled opinion/contact variables, leader-follower group structure, and selective control mechanisms.
+
+### Simulation families available
+- Test 1: single-leader control comparisons.
+- Test 2: two-leader controlled competition (symmetric vs asymmetric).
+- Test 3: extended multi-control leader scenarios.
+- Separate radical-vs-populist exploratory analysis in notebook/figures.
+
+## 6) Ambiguous Items Requiring Human Review
+- Precise canonical status of each notebook (analysis vs production reproduction).
+- Whether `Template_Paper.pdf` should remain versioned in-repo.
+- Whether additional raw outputs exist externally and should be imported into `results/experiments/`.
+
+## 7) Organization Decisions Made
+- Kept one active simulation script in `src/` and archived the close variant.
+- Moved slide deck to `reports/` alongside PDFs for publication artifacts.
+- Re-homed top-level figure outputs into `results/figures/` experiment-group folders.
+- Did not delete ambiguous artifacts; used `archive/` when uncertain.
